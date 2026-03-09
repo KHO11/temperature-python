@@ -1,6 +1,6 @@
 # Weather Data Analyzer (Python + NumPy)
 
-#Overview
+# Overview
 
 This project is a simple Python program that analyzes weekly temperature data. It uses the NumPy library to perform numerical calculations and basic data analysis.
 
