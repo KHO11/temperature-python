@@ -1,37 +1,20 @@
 import numpy as np
 
-# Temperature data for 7 days
 temperatures = np.array([12, 15, 14, 10, 18, 20, 16])
 
-# Calculate average using NumPy
-average_temp = np.mean(temperatures)
+# Average
+average_temp = temperatures.mean()
 
 print("Weekly Temperatures:")
+for i, temp in enumerate(temperatures, start=1):
+    print(f"Day {i}: {temp}°C")
 
-# Loop through temperatures
-for i in range(len(temperatures)):
-    print("Day", i + 1, ":", temperatures[i], "°C")
+print(f"\nAverage Temperature: {average_temp:.2f}")
 
-print("\nAverage Temperature:", average_temp)
-
-# Find temperatures above average using a loop
-above_average = []
-
-for temp in temperatures:
-    if temp > average_temp:
-        above_average.append(temp)
-
+# Above average (no loop needed)
+above_average = temperatures[temperatures > average_temp]
 print("Temperatures Above Average:", above_average)
 
-# Find max and min using a loop
-max_temp = temperatures[0]
-min_temp = temperatures[0]
-
-for temp in temperatures:
-    if temp > max_temp:
-        max_temp = temp
-    if temp < min_temp:
-        min_temp = temp
-
-print("Maximum Temperature:", max_temp)
-print("Minimum Temperature:", min_temp)
+# Max and Min (built-in NumPy functions)
+print("Maximum Temperature:", temperatures.max())
+print("Minimum Temperature:", temperatures.min())
